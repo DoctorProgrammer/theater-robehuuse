@@ -2,8 +2,21 @@ const app = require("express")();
 const hostname = "127.0.0.1";
 const port = 3000;
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:5500');
+    next();
+});
+
 app.get("/", (req, res) => {
     res.send("Startseite");
+});
+
+app.get("/message", (req, res) => {
+    let message = {
+        message: "Hello World",
+        date: new Date(),
+    };
+    res.json(message);
 });
 
 app.listen(port, () => {
