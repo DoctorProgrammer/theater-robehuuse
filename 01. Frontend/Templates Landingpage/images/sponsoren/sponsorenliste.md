@@ -7,7 +7,7 @@
 6. [Zueriost (früher: Regio.ch)](https://zueriost.ch/)
 7. [Aufwind Werbung](http://www.aufwind-werbung.ch/)
 8. [Homa Bau-Realisierung](http://www.homa-bau.ch/)
-9. [Kunz Holzbau](https://www.holzbau-kunz.ch/) URL verfügbar aber fehlerhaft
+9. [Kunz Holzbau](https://www.holzbau-kunz.ch/)
 10. [Metzgerei-Wursterei Niffeler](http://www.mykompass.ch/metzgerei-wursterei-niffeler/) URL nicht mehr verfügbar
 11. [Say Chocolate](https://saychocolate.ch/)
 12. [R&M](https://www.rdm.com/)

@@ -30,7 +30,7 @@ function scroll() {
     document.documentElement.style.setProperty('--width-images', `${calculateWidth()}px`);
     document.documentElement.style.setProperty('--amount-images', `${document.querySelectorAll('.slide img').length}`);
     slideTrack.forEach((track) => {
-        track.style.animation = "scroll 10s linear infinite";
+        track.style.animation = "scroll 30s linear infinite";
     })
 }
 
