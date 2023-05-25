@@ -20,7 +20,6 @@ function calculateWidth() {
         widthImages += imageWidth;
     });
 
-    console.log(widthImages);
     return widthImages / 2;
 }
 
@@ -45,15 +44,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const navRight3 = document.getElementById("navRight-3");
     const navRight4 = document.getElementById("navRight-4");
 
+    // open navigation bar
+
     navTogglerOpen.addEventListener("click", () => {
         nav.classList.toggle("active");
 
         scroll();
     });
 
+    // close navigation bar
+
     navTogglerClose.addEventListener("click", () => {
         nav.classList.toggle("active");
     });
+
+    document.onkeyup = function (e) {
+        if (e.key === 'Escape') {
+            nav.classList.remove("active");
+        }
+    }
+
+    // change navigation bar
 
     navRight1.addEventListener("click", () => {
         navLeft.innerHTML = '<li><a href="#">Geschichte</a></li>\

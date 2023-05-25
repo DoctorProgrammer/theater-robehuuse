@@ -118,8 +118,8 @@ nav ul {
 #navLeft li a {
     display: block;
     color: whitesmoke;
-    width: 100%;
     text-align: end;
+    width: 100%;
 }
 
 #navLeft li a:hover {
@@ -247,4 +247,37 @@ section {
 #section-1 {
     background-color: #D5D8C2;
     width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+    #sponsoren {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    #navLeft li a,
+    #navRight li p {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #navLeft li a,
+    #navRight li p {
+        font-size: 1.2rem;
+    }
+
+    #navLeft,
+    #navRight {
+        padding-top: 20%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    #navLeft li a,
+    #navRight li p {
+        font-size: 1rem;
+    }
 }
