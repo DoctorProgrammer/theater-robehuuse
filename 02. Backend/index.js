@@ -36,7 +36,8 @@ app.get("/", (req, res) => {
 });
 
 app.get("/person/:id", (req, res) => {
-    sqlQuery("SELECT * FROM `test`", req, res);
+    let id = parseInt(req.params.id);
+    sqlQuery('SELECT * FROM `test` WHERE testID = ' + id, req, res);
 });
 
 app.listen(port, () => {
