@@ -33,12 +33,23 @@ function scroll() {
     })
 }
 
+function deselectOl() {
+    ueberUns.classList.add("hidden");
+    auffuehrungen.classList.add("hidden");
+    dieBuehne.classList.add("hidden");
+    informationen.classList.add("hidden");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const navTogglerOpen = document.getElementById("navTogglerOpen");
     const navTogglerClose = document.getElementById("navTogglerClose");
     const nav = document.getElementById("nav");
 
-    const navLeft = document.getElementById("navLeft");
+    const ueberUns = document.getElementById("ueberUns");
+    const auffuehrungen = document.getElementById("auffuehrungen");
+    const dieBuehne = document.getElementById("dieBuehne");
+    const informationen = document.getElementById("informationen");
+
     const navRight1 = document.getElementById("navRight-1");
     const navRight2 = document.getElementById("navRight-2");
     const navRight3 = document.getElementById("navRight-3");
@@ -67,41 +78,30 @@ document.addEventListener("DOMContentLoaded", () => {
     // change navigation bar
 
     navRight1.addEventListener("click", () => {
-        navLeft.innerHTML = '<li><a href="#">Geschichte</a></li>\
-                                <li><a href="#">Vorstand</a></li>\
-                                <li><a href="#">Organisation</a></li>\
-                                <li><a href="#">Aktivitäten</a></li>\
-                                <li><a href="#">Mitglieder</a></li>';
+        deselectOl();
         eraseBorder();
+        ueberUns.classList.remove("hidden");
         navRight1.style.borderLeft = "10px solid red";
     });
 
     navRight2.addEventListener("click", () => {
-        navLeft.innerHTML = '<li><a href="#">Theaterstück</a></li>\
-                                <li><a href="#">Spielplan</a></li>\
-                                <li><a href="#">Aufführungsort</a></li>\
-                                <li><a href="#">Billette</a></li>';
+        deselectOl();
         eraseBorder();
+        auffuehrungen.classList.remove("hidden");
         navRight2.style.borderLeft = "10px solid red";
     });
 
     navRight3.addEventListener("click", () => {
-        navLeft.innerHTML = '<li><a href="#">Spieler</a></li>\
-                                <li><a href="#">Hinter der Bühne</a></li>';
+        deselectOl();
         eraseBorder();
+        dieBuehne.classList.remove("hidden");
         navRight3.style.borderLeft = "10px solid red";
     });
 
     navRight4.addEventListener("click", () => {
-        navLeft.innerHTML = '<li><a href="#">Sponsoren</a></li>\
-                                <li><a href="#">Nächste Termine</a></li>\
-                                <li><a href="#">Fragen + Antworten</a></li>\
-                                <li><a href="#">Statuten</a></li>\
-                                <li><a href="#">Disclaimer</a></li>\
-                                <li><a href="#">Links</a></li>\
-                                <li><a href="#">Kontakt</a></li>\
-                                <li><a href="#">Medienberichte</a></li>';
+        deselectOl();
         eraseBorder();
+        informationen.classList.remove("hidden");
         navRight4.style.borderLeft = "10px solid red";
     });
 });

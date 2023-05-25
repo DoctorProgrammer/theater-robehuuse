@@ -126,6 +126,10 @@ nav ul {
     color: rgb(255, 255, 255, 0.5);
 }
 
+.hidden {
+    display: none;
+}
+
 #navRight {
     background-color: whitesmoke;
 }
@@ -159,6 +163,8 @@ nav ul {
     align-items: flex-start;
     border-left: 10px solid red;
 }
+
+/* sponsoren */
 
 #sponsoren {
     position: relative;
@@ -206,6 +212,8 @@ nav ul {
         transform: translateX(-100%);
     }
 }
+
+/* sponsoren ende */
 
 .active {
     top: 0;
