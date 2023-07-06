@@ -1,15 +1,17 @@
-const app = require("express")();
-const mysql = require('mysql');
+import express from "express";
+import mysql from "mysql";
+import ip from "ip";
+import os from "os";
 
-const hostname = "127.0.0.1";
-const port = 3000;
+const port = process.env.SERVER_PORT || 3000; // const hostname = "localhost"; // Hostname vom Docker-Container: 172.18.0.4
+const app = express();
 
 function sqlQuery(query, req, res) {
     const connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'theater-robehuuse',
-        password: '123456789',
-        database: 'theater_robehuuse_api'
+        host: os.MYSQL_HOST,
+        user: os.MYSQL_USER,
+        password: os.MYSQL_PASSWORD,
+        database: os.MYSQL_DATABASE
     })
 
     connection.connect();
@@ -26,13 +28,8 @@ function sqlQuery(query, req, res) {
     })
 }
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-});
-
 app.get("/", (req, res) => {
-    res.send("Startseite");
+    res.send("Hello World!");
 });
 
 app.get("/person/:id", (req, res) => {
@@ -41,7 +38,7 @@ app.get("/person/:id", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+    console.log(`Server running on: http://${ip.address()}:${port}`);
 });
 
 /*
@@ -67,4 +64,16 @@ app.listen(port, () => {
     docker push trachselr/theater-robehuuse:latest
 
     docker run -p 8080:8080 --network="host" -e DB_HOST=localhost -e DB_PORT=3306 backend-image
+
+    docker run -d --network theater-robehuuse-network --network-alias mysql -v theater-robehuuse-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456789 -e MYSQL_DATABASE=theater-robehuuse-api mysql:8.0
+
+    docker run -dp 3000:3000 -w /app -v "$(pwd):/app" --network todo-app -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=secret -e MYSQL_DB=todos node:18-alpine sh -c "yarn install && yarn run dev"
+    
+    Docker Network:
+        SQL:
+            docker network create theater-robehuuse-network
+
+        Backend:
+            docker run -it --network theater-robehuuse-network trachselr/theater-robehuuse:latest
+
 */

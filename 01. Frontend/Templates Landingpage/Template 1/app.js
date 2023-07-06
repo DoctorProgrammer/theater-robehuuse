@@ -23,9 +23,7 @@ function calculateWidth() {
     return widthImages / 2;
 }
 
-function scroll() {
-    const slideTrack = document.querySelectorAll(".slide-track");
-
+function scroll(slideTrack) {
     document.documentElement.style.setProperty('--width-images', `${calculateWidth()}px`);
     document.documentElement.style.setProperty('--amount-images', `${document.querySelectorAll('.slide img').length}`);
     slideTrack.forEach((track) => {
@@ -54,13 +52,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const navRight2 = document.getElementById("navRight-2");
     const navRight3 = document.getElementById("navRight-3");
     const navRight4 = document.getElementById("navRight-4");
+    
+    const slideTrack = document.querySelectorAll(".slide-track");
+    const sponsorenLink = document.getElementById("sponsorenLink");
 
     // open navigation bar
 
     navTogglerOpen.addEventListener("click", () => {
         nav.classList.toggle("active");
 
-        scroll();
+        scroll(slideTrack);
     });
 
     // close navigation bar
@@ -103,5 +104,19 @@ document.addEventListener("DOMContentLoaded", () => {
         eraseBorder();
         informationen.classList.remove("hidden");
         navRight4.style.borderLeft = "10px solid red";
+    });
+
+    // stop scroll animation on hover and continue on mouseleave
+
+    sponsorenLink.addEventListener("mouseover", () => {
+        slideTrack.forEach((track) => {
+            track.style.animationPlayState = "paused";
+        })
+    });
+
+    sponsorenLink.addEventListener("mouseleave", () => {
+        slideTrack.forEach((track) => {
+            track.style.animationPlayState = "running";
+        })
     });
 });
