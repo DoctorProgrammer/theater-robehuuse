@@ -4,7 +4,7 @@
     --color-background: #f4f4f4;
     --color-primary: #c0b283;
     --color-secondary: #ddd1c1;
-    --color-tertiary: #786235;
+    --color-tertiary: #5e3023;
     --color-accent: #b2a792;
 }
 
@@ -299,7 +299,7 @@ section {
 }
 
 #section-1 {
-    background-color: #D5D8C2;
+    background-color: #c08552d1;
     width: 100%;
 }
 
