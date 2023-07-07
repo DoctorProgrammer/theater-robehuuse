@@ -96,6 +96,7 @@ nav {
     left: 0;
     width: 100%;
     height: 80%;
+    z-index: 1;
 }
 
 nav ul {
@@ -232,7 +233,6 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    z-index: -1;
 }
 
 section {
@@ -242,7 +242,6 @@ section {
     justify-content: center;
     width: 100%;
     padding: 20px;
-    height: 110vh;
 }
 
 #title {
@@ -265,7 +264,8 @@ section {
 #logo {
     position: absolute;
     display: flex;
-    text-decoration: none;
+    cursor: pointer;
+    text-decoration: none   ;
     top: 10%;
     left: 2.5%;
     height: 10%;
@@ -274,7 +274,6 @@ section {
 #logo img {
     height: 100%;
     width: auto;
-    cursor: pointer;
 }
 
 #logo div {
@@ -341,6 +340,50 @@ section {
 .section-text p {
     font-size: 1.5rem;
     font-weight: 300;
+}
+
+#section-1 section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff6f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+#section-1 h1 {
+    text-align: center;
+    color: #555;
+}
+
+#section-1 ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#section-1 li {
+    margin-bottom: 10px;
+}
+
+#section-1 .year {
+    font-weight: bold;
+    font-size: 18px;
+    color: #777;
+}
+
+#section-1 .event-date {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+#section-1 .event-title {
+    font-weight: bold;
+    color: #333;
+}
+
+#section-1 .event-description {
+    color: #777;
 }
 
 @media only screen and (max-width: 800px) {
