@@ -1,0 +1,25 @@
+{
+  "name": "theater-robehuuse-backend",
+  "version": "1.0.0",
+  "description": "Backend for the Theater-Robheuuse project",
+  "main": "backend.js",
+  "scripts": {
+    "test": "node backend.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoctorProgrammer/theater-robehuuse.git"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "Robin Trachsel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoctorProgrammer/theater-robehuuse/issues"
+  },
+  "homepage": "https://github.com/DoctorProgrammer/theater-robehuuse#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
