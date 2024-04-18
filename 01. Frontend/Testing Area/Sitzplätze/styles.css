@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+#frame {
+    height: 50vh;
+    width: 50vw;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#stage {
+    border-radius: 0 0 50% 50%;
+    border: 1px solid black;
+    height: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+#seats {
+    --rows: 13;
+    --columns: 21;
+    display: grid;
+    background-color: antiquewhite;
+    grid-template-columns: repeat(var(--columns), calc(100% / var(--columns)));
+    grid-template-rows: repeat(var(--rows), var(--columns));
+    width: 100%;
+    height: 90%;
+    margin-top: 1rem;
+    overflow-y: scroll;
+}
+
+.seat {
+    /* its an image. rotate 180 degree.  */
+    transform: rotate(180deg);
+    width: 100%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.seat.occupied {
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+.seat::after {
+    content: 'Test';
+    display: none;
+}
+
+.seat:hover::after {
+    display: inline;
+}
+
+.nothing {
+    height: 100%;
+    width: 100%;
+}
