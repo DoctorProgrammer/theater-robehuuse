@@ -35,7 +35,13 @@ CREATE TABLE `defaultTicket` (
     `possibleDates` VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE `seats` (
+CREATE TABLE `defaultSeats` (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `seatNr` INT NOT NULL,
+    `available` BOOLEAN NOT NULL
+);
+
+CREATE TABLE `dinnerSeats` (
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `seatNr` INT NOT NULL,
     `available` BOOLEAN NOT NULL
